@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Bags Store</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="nav-container1">
+        <h3>The Bags Store</h3>
+      </div>
+      <div class="nav-container1">
+        <form class="form-search">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            class="input-search"
+            placeholder="Ingrese el producto"
+            autocomplete="off"
+          />
+          <button id="btn-search">Buscar</button>
+        </form>
+      </div>
+      <div class="nav-container1">
+        <nav class="navigation-bar">
+          <ul class="nav-btns-container">
+            <li class="nav-item" id="nav-home">
+              <a href="#home"
+                ><img
+                  src="/assets/img/home_1946488.png"
+                  class="icons"
+                  id="home-icon"
+              /></a>
+            </li>
+            <li class="nav-item" id="nav-cart">
+              <a href="#"
+                ><img
+                  src="/assets/img/shopping-cart_833314.png"
+                  class="icons"
+                  id="cart-icon" /></a
+              ><span class="circle-mensaje">0</span>
+            </li>
+            <li class="nav-item" id="nav-shop">
+              <a href="#shop"
+                ><img
+                  src="/assets/img/store_869687.png"
+                  class="icons"
+                  id="shop-icon"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="home-container" id="home">
+      <div id="welcome-contaienr">
+        <div class="box-welcome" id="img-welcome-container">
+          <img
+            src="https://images.unsplash.com/photo-1605092043145-2d6d763ec771?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
+            id="bag-img"
+            srcset=""
+          />
+        </div>
+        <div class="box-welcome box-text" id="text-welcome-container">
+          <h3>The Bags Store</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet,
+            tempora placeat. Aliquam magnam nihil illum rerum, doloribus at
+            voluptatem officia. Itaque dolores ea eaque, corrupti voluptatum
+            aliquid cumque asperiores sint.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <div id="cart-container" class="cart-container cart-hidden">
+      <ul class="list-elementos-container"></ul>
+      <div class="cart-footer"><h5 class="cart-total"></h5></div>
+    </div>
+    <!--  -->
+    <section class="shop-container" id="shop">
+      <aside class="filter-container">
+        <form id="form-filter">
+          <h4 class="filter-tittle">Filtrar</h4>
+          <div class="filtro-precio cajas-filtro">
+            <label for="precio-min" class="precio-label">
+              <input
+                type="number"
+                class="inputs"
+                placeholder="Minimo"
+                id="precio-min"
+              />
+              Minimo
+            </label>
+            <label for="precio-max" class="precio-label">
+              <input
+                type="number"
+                class="inputs"
+                placeholder="Maximo"
+                id="precio-max"
+              />
+              Maximo
+            </label>
+          </div>
+          <div class="filtro-modelo cajas-filtro">
+            <p>Modelo</p>
+            <div class="form-field">
+              <label for="bolso" class="custom-label">
+                <input type="radio" name="bolso" id="bolso" value="bolso" />
+                Bolso
+              </label>
+              <label for="rinonera" class="custom-label">
+                <input
+                  type="radio"
+                  name="rinonera"
+                  id="rinonera"
+                  value="rinonera"
+                />
+                Riñonera
+              </label>
+              <label for="mochila" class="custom-label">
+                <input
+                  type="radio"
+                  name="mochila"
+                  id="mochila"
+                  value="mochila"
+                />
+                Mochila
+              </label>
+              <label for="portaCelular" class="custom-label">
+                <input
+                  type="radio"
+                  name="portaCelular"
+                  id="portaCelular"
+                  value="portaCelular"
+                />
+                Porta Celular
+              </label>
+            </div>
+          </div>
+          <button type="submit" id="btn-filtrar">Filtrar</button>
+        </form>
+      </aside>
+      <div class="cards-container" id="card-container"></div>
+      <div class="cards-masInfo">
+        <div class="masInfo-header">
+          <span class="material-symbols-outlined" id="closeHeader">
+            close
+          </span>
+        </div>
+        <div class="masInfo-body">
+          <div class="imasges-container">
+            <div class="img-list">
+              <ul class="list-img-div">
+                <li class="box-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1571273260782-bab4699dde20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                    class="image-masInfo-little"
+                    alt=""
+                    srcset=""
+                  />
+                </li>
+                <li class="box-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1571273260782-bab4699dde20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                    class="image-masInfo-little"
+                    alt=""
+                    srcset=""
+                  />
+                </li>
+                <li class="box-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1571273260782-bab4699dde20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                    class="image-masInfo-little"
+                    alt=""
+                    srcset=""
+                  />
+                </li>
+                <li class="box-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1571273260782-bab4699dde20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                    class="image-masInfo-little"
+                    alt=""
+                    srcset=""
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="img-princ">
+              <img
+                src="https://images.unsplash.com/photo-1571273260782-bab4699dde20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                alt=""
+                class="image-masInfo-princ"
+                srcset=""
+              />
+            </div>
+          </div>
+          <div class="description-container">
+            <div class="description-header">
+              <h4>Persia bag</h4>
+            </div>
+            <div class="description-body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
+                iusto eligendi enim a at. Pariatur molestiae dicta nulla facere
+                officia!
+              </p>
+              <p>Precio: $ 450</p>
+              <p>cantidad : <span>⬅</span> 0 <span>➡</span></p>
+            </div>
+            <div class="description-footer">
+              <button class="btn-comprar">Add to cart</button>
+              <button class="btn-descripcion-comprar">Comprar</button>
+            </div>
+          </div>
+        </div>
+        <div class="masInfo-footer"></div>
+      </div>
+    </section>
+    <script src="/assets/product.js"></script>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
