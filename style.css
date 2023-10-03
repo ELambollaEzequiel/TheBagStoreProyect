@@ -110,11 +110,11 @@
   color: white;
 }
 
-.hidden {
+.cart-hidden {
   display: none;
 }
 
-.show {
+.cart-show {
   position: fixed;
   top: 110px;
   right: 20px;
@@ -331,15 +331,10 @@
 .masInfo-show {
   position: absolute;
   display: flex;
-}
-
-.cards-masInfo {
-
   top: 118%;
   left: 25%;
   width: 55%;
   height: 80vh;
-  flex-direction: column;
   border-radius: 20px;
   backdrop-filter: blur(11px) saturate(0%);
   -webkit-backdrop-filter: blur(11px) saturate(0%);
@@ -350,6 +345,11 @@
   color: #ffffff;
   font-size: 17px;
   padding: 30px;
+}
+
+.cards-masInfo {
+  flex-direction: column;
+
 }
 
 .masInfo-header {
@@ -453,6 +453,13 @@
   align-items: center;
   text-align: center;
   gap: 5px;
+}
+#count-number{
+  text-align: center;
+  width: 20px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
 }
 
 .description-footer {

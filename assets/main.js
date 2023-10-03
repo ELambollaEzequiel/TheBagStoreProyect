@@ -206,10 +206,11 @@ const masInfoInyection = (producto) => {
             ${producto.descripcion}
             </p>
             <p>Precio: $ ${producto.precio} </p>
-            <p>Cantidad : <span class="add-card-nfo card-info-addd">⬅</span> 0 <span class="add-card-nfo card-info-rest">➡</span></p>
+            <p>Cantidad : <span class="add-card-nfo card-info-addd">⬅</span> 
+            <input type="text" inputmode="numeric" placeholder="0" id="count-number"/> <span class="add-card-nfo card-info-rest">➡</span></p>
           </div>
           <div class="description-footer">
-            <button class="btn-masInfo btn-comprar">Add to cart</button>
+            <button class="btn-masInfo  btn-comprar" data-id=${producto.id}>Add to cart</button>
             <button class="btn-masInfo btn-descripcion-comprar">Comprar</button>
           </div>
         </div>
@@ -225,6 +226,25 @@ const masInfoId = (e) => {
   masInfoBody.innerHTML = "";
   masInfoBody.innerHTML = masInfoInyection(prodId)
 };
+//comprar desde mas info
+const comprarInfo = (e) => {
+  if (!e.target.classList.contains("btn-comprar")) return;
+  const filterId = Number(e.target.dataset.id);
+  const prodId = productos.find((prod) => prod.id == filterId);
+  //EXISTENCIA DE PRODUCTO
+  const existencia = carrito.some((producto) => producto.id === filterId);
+  if (existencia) {
+    carrito = carrito.map((prod) =>
+      prod.id === prodId.id ? { ...prod, cantidad: prod.cantidad + 1 } : prod
+    );
+  } else {
+    carrito = [...carrito, { ...prodId, cantidad: 1 }];
+  }
+  console.table(carrito);
+  renderCartProduct(carrito);
+  cantProductos();
+  total();
+};
 
 
 const init = () => {
@@ -238,6 +258,7 @@ const init = () => {
   cardsContainer.addEventListener('click', masInfoId)
   masInfoContainer.addEventListener('click', masInfoClose)
   cardsContainer.addEventListener('click', masInfoId)
+  masInfoBody.addEventListener('click', comprarInfo)
 
 };
 init();
